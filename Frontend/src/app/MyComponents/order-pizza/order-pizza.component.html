@@ -1,0 +1,46 @@
+<div>
+    <table *ngFor="let data of restext" style="height:50%;width:50%;display: inline-block;">
+        <tbody>
+                <tr >
+                    <td>
+                    <div style="border: black solid;display: inline-flex;">
+                        <div>
+                            <td style="display: block;">
+                                {{data.name}}
+                            </td>
+                            <td *ngIf="data.type =='veg'"><div style="background-color: green; height: 10px; width: 10px;"></div></td>
+                            <td *ngIf="data.type =='nonveg'"><div style="background-color: red; height: 10px; width: 10px;"></div></td>
+                            <td style="display: block;">
+                                &#8377;{{data.price}}
+                            </td>
+                        </div>
+                        <div>
+                            <td style="display: block;">
+                                {{data.description}}
+                            </td>
+                            <td style="display: block;">
+                                <b>ingredients : </b>
+                                {{data.ingredients}}
+                            </td>
+                            <td style="display: block;">
+                                <b>toppings : </b>
+                                {{data.topping}}
+                            </td>
+                        </div>
+                        <div>
+                            <td style="display: block;">
+                                <img height="140px" width="100px" src="{{data.image}}">
+                            </td>
+                            <br>
+                            <td style="display: block;">
+                                <button class="btn btn-sm btn-warning custom-hover" (click)="addtocart(data)">Add to Cart</button>
+                            </td>
+                        </div>
+                    </div>
+                </td>
+            
+                </tr>
+        </tbody>
+    </table>
+</div>
+

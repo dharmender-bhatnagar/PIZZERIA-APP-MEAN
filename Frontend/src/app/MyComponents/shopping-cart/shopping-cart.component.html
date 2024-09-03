@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center">
+        <div>
+            <div class="row">
+                <div class="col">
+                    <hr>
+                </div>
+                <div class="col-auto">
+                    <h4 class="text-capitalize">My Cart</h4>
+                </div>
+                <div class="col">
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-sm-auto mt-4">
+                    <table class="table table-striped border border-3 ">
+                        <tbody>
+                            <tr class="p-3" *ngFor="let c of cart">
+                                <td><img height="100px" width="100px" [src]="c.image" class="cart-pizza"></td>
+                                <td>
+                                    <b class="text-capitalize">{{c.name}}</b> <br>
+                                </td>
+                                <td>{{c.topping}}</td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <button type="button" class=" btn  btn-default">
+                                                <i class="fa fa-minus" aria-hidden="true"></i>
+                                            </button>
+                                        </span>
+                                        <button (click)="incrementbtn(c.id)" >+</button>
+                                        <span style="height: 30px; width: 30px; background-color: white; color: black; text-align: center;" >{{c.quantity}}</span>
+                                        <button (click)="decrementbtn(c.id)" >-</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span class="input-group-btn">
+                                            <!-- <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                                            <button (click)="deletebtn(c.id)" type="button" class=" btn btn-danger custom-hover">
+                                                Delete
+                                            </button>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>&#8377;{{c.price}}</td>
+                                <td>  <button class="btn" ><i class="fa fa-trash text-danger"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td colspan="6"><span class="float-end">Sub Total:&nbsp; &#8377; {{totalPrice}}</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                </div>
+                <div class="col"></div>
+            </div>
+            
+        </div>
+        <button class="btn btn-success custom-hover" (click)="deletedetails()" style="margin: auto; width: 100px;">Pay Now</button>
+    </div>
+</div>

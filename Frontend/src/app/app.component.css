@@ -1,0 +1,8 @@
+.navbar{
+  margin: 0 0 2% 0;
+}
+.custom-hover:hover {
+  background-color: white !important; /* Change background color to white on hover */
+  color: black !important; /* Change text color to black on hover */
+  border-color: black !important; /* Optionally change border color */
+}

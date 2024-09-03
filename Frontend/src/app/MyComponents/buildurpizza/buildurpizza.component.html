@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <hr>
+        </div>
+        <div class="col-auto">
+            <h4 class="text-capitalize text-center">Build your Pizza</h4>
+        </div>
+        <div class="col">
+            <hr>
+        </div>
+    </div>
+    <p class="text-center">Make your own Pizza by choosing Toppings and Ingredients from Below</p>
+    <table style="width: 600px;margin: auto;" class=" table table-striped border border-2">
+        <thead>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of restext">
+                <td> <img [src]="data.image" width="100px" height="100px"></td>
+                <td><b>{{data.tname}} &nbsp; &#8377;{{data.price}}</b></td>
+                <td>
+                    <div class="form-check">
+                        <input type="checkbox" (change)="checkingredients(data.tname,data.price)" >&nbsp;
+                        <label class="form-check-label">
+                            Add
+                        </label>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="margin: auto; width: 600px;" class="row">
+        <div class="col-4">
+            <b style="color: darkblue;" id="price">
+            </b>
+        </div>
+        <div align="center" class="col-4">
+            <br>
+            <button type="button" class="btn btn-dark text-warning custom-hover" (click)="custombtn()">Build Ur Pizza</button>
+        </div>
+    </div>
+
+</div>
